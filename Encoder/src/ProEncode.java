@@ -30,14 +30,14 @@ public class ProEncode {
 		}
 	}
 
-	public static String proEncode(String toEncrypt, String secret) {
+	public static String proEncode(String toEncryption, String secret) {
 
 		try {
 			setKey(secret);
 			Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
 			cipher.init(Cipher.ENCRYPT_MODE, secretKey);
 
-			return Base64.getEncoder().encodeToString(cipher.doFinal(toEncrypt.getBytes("UTF-8")));
+			return Base64.getEncoder().encodeToString(cipher.doFinal(toEncryption.getBytes("UTF-8")));
 		} catch (Exception e) {
 			System.out.println("Error " + e.toString());
 		}

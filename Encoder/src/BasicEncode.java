@@ -10,9 +10,8 @@ public class BasicEncode {
 
 	public static String basicEncode(String key) {
 		String result = "";
-		int lon = key.length();
 		char move;
-		for (int i = 0; i < lon; i++) {
+		for (int i = 0; i < key.length(); i++) {
 			move = key.charAt(i);
 			move += 8;
 			result += move;
@@ -23,9 +22,8 @@ public class BasicEncode {
 
 	public static String basicDecode(String key) {
 		String result = "";
-		int lon = key.length();
 		char move;
-		for (int i = 0; i < lon; i++) {
+		for (int i = 0; i < key.length(); i++) {
 			move = key.charAt(i);
 			move -= 8;
 			result += move;
