@@ -5,11 +5,10 @@ public class Main {
 	public static void main(String[] args) {
 
 		/*
-		 * TODO: 
+		 * TODO:
 		 * 
 		 * while to always running program try catch
 		 * 
-		 * Pro Decode still wrong !
 		 */
 
 		Salt salt = new Salt();
@@ -20,7 +19,7 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("===== PROGRAM =====");
+		System.out.println("======== Encryption ===F=====");
 		System.out.println("1 - Basic Encode");
 		System.out.println("2 - Basic & Advanced Encode");
 		System.out.println("0 - Exit ");
@@ -32,7 +31,7 @@ public class Main {
 			Scanner sc1 = new Scanner(System.in);
 			System.out.println("Enter data to basic encode");
 			String dataBasic = sc1.nextLine();
-			String simpleEncode = BasicEncode.basicEncode(dataBasic) + salt;
+			String simpleEncode = BasicEncode.basicEncode(dataBasic) + salt.generateSalt();
 			System.out.println("Your encoded data :");
 			System.out.println(simpleEncode);
 			System.out.println();
@@ -44,7 +43,7 @@ public class Main {
 			System.out.println("Enter data to advanced encode");
 			String dataPro = sc2.nextLine();
 			String proEncode = BasicEncode.basicEncode(dataPro);
-			String proEncode2 = ProEncode.proEncode(proEncode, secretKey)+ salt;
+			String proEncode2 = ProEncode.proEncode(proEncode, secretKey) + salt.generateSalt();
 			System.out.println("Your encoded data :");
 			System.out.println(proEncode2);
 			System.out.println();
@@ -70,12 +69,12 @@ public class Main {
 			switch (choose2) {
 			case 1:
 				if (encodedData.contains("/")) {
-					String splitOne = encodedData.substring(0, encodedData.length() - 14);
+					String splitOne = encodedData.substring(0, encodedData.length() - 6);
 					String decodeData = BasicEncode.basicDecode(splitOne);
 					System.out.println("Your decoded data : ");
 					System.out.println(decodeData);
 				} else if (encodedData.contains("|")) {
-					String splitOne = encodedData.substring(0, encodedData.length() - 14);
+					String splitOne = encodedData.substring(0, encodedData.length() - 6);
 					String decodeDataPro = ProEncode.proDecode(splitOne, secretKey);
 					String decodeData = BasicEncode.basicDecode(decodeDataPro);
 					System.out.println("Your decoded data : ");

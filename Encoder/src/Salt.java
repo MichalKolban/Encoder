@@ -4,7 +4,7 @@ public class Salt {
 
 	public String generateSalt() {
 
-		String characters = "abcdefghijklmnoprsqwuyxABCDEFGHIJKLMNOPRSTKWU0987654321";
+		String characters = "abcdefghijklmnoprsqwuyxABCDEFGHIJKLMNOPRSTKWU0987654321!@#$%^&*()_+";
 		String randomString = "";
 
 		int length = 5;
