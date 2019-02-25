@@ -3,9 +3,7 @@ public class BasicEncode {
 
 	/*
 	 * Simple swiping letters forward -> 8
-	 * 
 	 * is some cases u need to switch in IDE to UTF-8
-	 * 
 	 */
 
 	public static String basicEncode(String key) {
